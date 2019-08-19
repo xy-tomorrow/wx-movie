@@ -1,0 +1,22 @@
+/* pages/comments/comments.wxss */
+
+.view_header {
+  width: 700rpx;
+  line-height: 40rpx;
+  margin: 40rpx auto;
+  text-align: center;
+}
+.view_title{
+  font-size: 26rpx;
+  color: gray;
+  margin-bottom:40rpx; 
+}
+
+.view_order {
+  border: 1rpx solid rgb(216, 210, 210);
+  width: 700rpx;
+  height: 400rpx;
+  margin: 50rpx 0;
+  padding: 20rpx;
+  box-sizing: border-box;
+}

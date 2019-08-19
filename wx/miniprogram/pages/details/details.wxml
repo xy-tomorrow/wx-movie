@@ -1,0 +1,153 @@
+<!--pages/details/details.wxml-->
+<view class="view_header" v-cloak wx:if="{{view_toast}}">
+
+  <!-- 电影详情页面 -->
+  <view class="view_details">
+    <!-- 左边图片 -->
+    <view>
+      <image src="{{list.images.small}}" class="view_details_img"></image>
+    </view>
+    <!-- 右边具体信息 -->
+    <view class="view_details_title">
+      <view class="view_details_titles">{{list.title}} ({{list.year}})</view>
+      <view class="view_small_title">
+        <text wx:for="{{list.genres}}" wx:key="index">{{list.genres[index]}} </text>
+        <text> / {{list.countries}}</text>
+        <text> / 片长{{list.durations}}</text>
+      </view>
+      <view class="view_button">
+        <view bindtap="onlooked" data-id="{{list.id}}">
+          <image src="/images/xinlixue.png"></image>
+          <text>想看</text>
+        </view>
+        <view bindtap="onlooked">
+          <image src="/images/xingxing.png"></image>
+          <text>看过</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <!-- 评分 -->
+  <view class="view_score">
+    <!-- 标题部分 -->
+    <view class="view_score_title">
+      <text>豆瓣评分 ™</text>
+      <text> > </text>
+    </view>
+    <!-- 内容部分 -->
+    <view class="view_score_header">
+      <!-- 左边分数 -->
+      <view class="view_score_num">
+        <view>{{list.rating.average}}</view>
+        <view>
+          <van-rate value="{{list.rating.average/2}}" size="{{ 12 }}" allow-half color="#f44" void-color="#eee" void-icon="star" bind:change="onChange" />
+        </view>
+      </view>
+      <!-- 右边的评论 -->
+      <view class="view_details_rate">
+        <!-- 左边的位置的小星星 -->
+        <view class="van_rate">
+          <van-rate disabled value="{{index}}" count="{{ index }}" bind:change="onChange" size="{{ 8 }}" wx:for="{{list.rating.details}}" wx:key="{{index}}" />
+        </view>
+        <!-- 右边的进度条 -->
+        <view class="view_detail_right">
+          <view wx:for="{{list.rating.details}}" wx:key="{{index}}" class="view_right_long">
+            <van-slider value="{{list.rating.details[index]*100/mouter}}" use-button-slot bind:drag="onDrag" bar-height="14rpx" active-color="#ff0015">
+            </van-slider>
+          </view>
+          <view>{{mouter}}人评分</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 介绍部分 -->
+  <view class="view_introduction">
+    <!-- 简介 -->
+    <view class="view_title_first">简介</view>
+    <!-- 文字部分 -->
+    <view class="view_title_last view_last" wx:if="{{introduction}}">{{list.summary}}</view>
+    <view class="view_title_last" wx:if="{{!introduction}}">{{list.summary}}</view>
+    <!-- 点击收起部分 -->
+    <view wx:if="{{introduction}}" bindtap="on_introduction" class="view_unfold">展开</view>
+    <view wx:if="{{!introduction}}" bindtap="on_introduction" class="view_unfold">收起</view>
+
+    <!-- 影人部分 -->
+    <!-- 标题栏 -->
+    <view class="view_title_first">影人</view>
+  </view>
+  <!-- 横向滚动影人信息 -->
+  <view class="view_movie_first">
+    <scroll-view scroll-x class="view_movie_faster">
+      <view class="view_movie_item" wx:for="{{list.casts}}" wx:key="index" data-id="{{item.id}}">
+        <image src="{{item.avatars.small}}" class="view_movie_img"></image>
+        <view>{{item.name}}</view>
+      </view>
+      <view class="view_movie_item" wx:for="{{list.writers}}" wx:key="index" data-id="{{item.id}}">
+        <image src="{{item.avatars.small}}" class="view_movie_img"></image>
+        <view>{{item.name}}</view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 预告部分 -->
+  <view class="view_trailer">
+    <view class="view_trailer_first">预告片/剧照</view>
+    <view class="view_trailer_last">全部 300 ></view>
+  </view>
+  <view>
+    <scroll-view scroll-x class="view_movie_faster">
+      <view class="view_trailer_img" wx:for="{{list.photos}}" wx:key="index" data-id="{{item.id}}">
+        <image src="{{item.image}}"></image>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 短评部分 -->
+  <view class="view_trailer_one">
+    <view class="view_trailer view_one">
+      <view class="view_trailer_first">短评</view>
+      <view class="view_trailer_last">全部 {{list.comments_count}}></view>
+    </view>
+
+    <view wx:for="{{list.popular_comments}}" wx:key="index" class="view_pop">
+      <view class="view_pop_order">
+        <image src="{{item.author.avatar}}" class="view_pop_img"></image>
+        <view>
+          <view class="view_pop_title">{{item.author.name}}</view>
+          <van-rate value="{{item.rating.value}}" bind:change="onChange" class="view_pop_vant" size="{{12}}" />
+          <text class="view_pop_text"> {{item.created_at}}</text>
+        </view>
+      </view>
+      <view class="view_pop_subtitle">{{item.content}}</view>
+      <view class="view_pop_love">
+        <image src="/images/dianzan.png"></image>
+        <text class="view_pop_text">{{item.useful_count}}</text>
+      </view>
+    </view>
+    <view class="view_pop_list">
+      <view class="view_trailer_first">查看全部短评</view>
+      <view class="view_trailer_last"> > </view>
+    </view>
+  </view>
+  <!-- 影评部分 -->
+  <view class="view_trailer" wx:if="{{list.reviews_count>0}}">
+    <view class="view_trailer_first">影评
+      <text class="view_pop_text"> {{list.reviews_count}}条</text>
+    </view>
+  </view>
+  <!-- 影评内容部分 -->
+  <view class="view_last_lod" wx:for="{{list.popular_reviews}}" wx:key="index">
+    <view class="view_lod">
+      <image src="{{item.author.avatar}}" class="view_lod_img"></image>
+      <text class="view_pop_text">{{item.author.name}} </text>
+      <van-rate value="{{item.rating.value}}" bind:change="onChange" class="view_pop_vant" size="{{8}}" />
+      <view class="view_lod_title">{{item.title}}</view>
+      <view class="view_lod_small">{{item.summary}}</view>
+      <view class="view_hode">
+      <text>53065回复</text> · <text>7812有用</text> · <text>144转发</text>
+      </view>
+    </view>
+
+  </view>
+
+
+</view>

@@ -1,0 +1,39 @@
+
+.view_movie_first{
+  width:100%;
+  margin: 0 auto;
+  font-size: 24rpx;
+}
+.view_movie_img{
+  width: 180rpx;
+  height: 240rpx;
+  border-radius:10rpx; 
+}
+.view_movie_item{
+  width: 180rpx;
+  height: 310rpx;
+  display: inline-block;
+  text-align: center;
+  margin:0 35rpx;
+  margin-top:20rpx; 
+}
+.view_movie_item>view{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 24rpx;
+}
+.view_movie_item:last-child{
+  margin-right: 25rpx;
+}
+.view_movie_item>text{
+  color:gray;
+  font-size: 20rpx;
+}
+.view_movie_ping{
+  display: inline-block;
+}
+.load_more{
+  text-align: center;
+  padding:20rpx 0;
+}

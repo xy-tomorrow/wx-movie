@@ -1,0 +1,110 @@
+<!-- 登录和退出界面 -->
+<view class="view_me">
+  <view class="view_me_one">
+    <button class="view_deng" wx:if="{{login}}" bindtap="login" open-type="getUserInfo" bindgetuserinfo="getMyInfo">登录</button>
+    <view wx:if="{{!login}}">
+      <view class="view_header_first">
+        <image src="{{userimg}}" class="view_header_img"></image>
+      </view>
+      <view class="view_header_name">{{username}}</view>
+    </view>
+  </view>
+  <view class="view_righ" wx:if="{{!login}}">
+    <view class="view_ord" bindtap="userclear">
+      <van-icon name="exchange" />
+      <text>退出</text>
+    </view>
+  </view>
+</view>
+<!-- 下面是观看记录-->
+<view class="view_books">
+  <view class="view_music_order">
+    <view class="view_music">我的书影音</view>
+    <view class="view_music_right">全部  </view>
+    <view> <van-icon name="arrow" /></view>
+  </view>
+</view>
+<!-- <!-- 内容部分 -->
+<!-- 观影 -->
+<view class="view_b_last" bindtap="order_movie">
+<!-- 前面图片 -->
+  <image src="/images/dianying.png" class="view_last_img"></image>
+  <!-- 看过记录 -->
+  <view>
+    <view>观影分析</view>
+    <text  class="view_last_a">{{num_movie}} </text><text class="view_last_b">看过</text>
+  </view>
+  <!-- 标题过的书 -->
+  <view class="view_last_cd">
+    <view>标记10部影片</view>
+    <view>开启观影分析</view>
+  </view>
+  <!-- 立即开始 -->
+  <view class="view_last_ok">立即开始</view>
+  <!-- 右边箭头 -->
+  <view> <van-icon name="arrow" /></view>
+</view>
+<!-- 读书 -->
+<view class="view_b_last" bindtap="order_look">
+<!-- 前面图片 -->
+  <image src="/images/dushu.png" class="view_last_img"></image>
+  <!-- 看过记录 -->
+  <view>
+    <view>读书分析</view>
+    <text  class="view_last_a">{{num_look}} </text><text class="view_last_b">看过</text>
+  </view>
+  <!-- 标题过的书 -->
+  <view class="view_last_cd">
+    <view>标记10本书</view>
+    <view>开启读书分析</view>
+  </view>
+  <!-- 立即开始 -->
+  <view class="view_last_ok">立即开始</view>
+  <!-- 右边箭头 -->
+  <view> <van-icon name="arrow" /></view>
+</view>
+<!-- 音乐 -->
+<view class="view_b_last" bindtap="order_look">
+<!-- 前面图片 -->
+  <image src="/images/yinle.png" class="view_last_img"></image>
+  <!-- 看过记录 -->
+  <view>
+    <view>音乐分析</view>
+    <text  class="view_last_a">{{num_music}} </text><text class="view_last_b">看过</text>
+  </view>
+  <!-- 标题过的书 -->
+  <view class="view_last_cd">
+    <view>标记10张唱片</view>
+    <view>开启音乐分析</view>
+  </view>
+  <!-- 立即开始 -->
+  <view class="view_last_ok">立即开始</view>
+  <!-- 右边箭头 -->
+  <view> <van-icon name="arrow" /></view>
+</view>
+
+<!-- 这是下面弹出提示框 -->
+<van-popup show="{{ bottom }}" position="bottom" overlay bind:click-overlay="user_no">
+  <view class="view_width">
+    <view class="view_logo">
+      <view class="view_logo_img">
+        LM
+      </view>
+      <text>love 影评</text>
+      <text>申请</text>
+    </view>
+    <view class="view_user_title">获取你的昵称、头像、地区及性别</view>
+    <view class="view_user">
+      <image src="{{userimg}}" class="view_userimg"></image>
+      <view class="view_name">
+        <view class="view_title">微信个人信息</view>
+        <view class="view_subtitle">{{username}}</view>
+      </view>
+      <van-icon name="success" color="#00CC00" />
+    </view>
+    <view class="view_dit">
+      <button bindtap="user_no">取消</button>
+      <button class="view_ok" bindtap="user_ok">允许</button>
+    </view>
+  </view>
+</van-popup>

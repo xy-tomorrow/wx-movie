@@ -1,0 +1,9 @@
+<view class="view_header">
+<view class="view_title">点击星星评分</view>
+<view><van-rate value="{{ 3}}" bind:change="onChange" /></view>
+<textarea auto-focus show-confirm-bar adjust-position placeholder="请输入您的评价！" class="view_order">
+</textarea>
+
+<van-button size="large" type="primary" >提交</van-button>
+
+</view>

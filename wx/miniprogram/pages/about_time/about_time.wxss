@@ -1,0 +1,120 @@
+/* miniprogram/pages/about_time/about_time.wxss */
+.view_a{
+  background: gainsboro;
+
+}
+.view_a_header{
+  width: 100%;
+  height: 320rpx;
+  /* background: pink; */
+  font-size: 50rpx;
+  text-align: center;
+  line-height: 400rpx;
+  font-weight: bold;
+  color: rgb(247, 236, 236);
+  background-size: 190rpx 100%;
+  /* background: white; */
+}
+.view_a_white{
+    background: rgb(240, 235, 235);
+    margin-top:25rpx; 
+    height: 450rpx;
+    padding: 25rpx 0;
+}
+/* 内容部分居中 */
+.view_a_first{
+  width: 700rpx;
+  margin: 0 auto;
+}
+.view_a_no{
+  width:85rpx;
+  height: 45rpx;
+  background: rgba(248, 224, 114, 0.822);
+  border-radius: 8rpx;
+  color:rgb(192, 151, 37);
+  font-size: 22rpx;
+  text-align: center;
+  line-height: 45rpx;
+  margin-bottom:20rpx; 
+}
+.view_a_order{
+  display: flex;
+  justify-content: space-between;
+  height: 260rpx;
+  /* background: burlywood; */
+  position: relative;
+  
+}
+
+.view_a_img>image{
+  width: 180rpx;
+  height: 260rpx;
+}
+.view_a_img>view{
+  width: 40rpx;
+  height: 40rpx;
+  background: white;
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  top:0;
+  left: 0;
+  opacity: 0.4;
+}
+
+.view_a_img>view>image{
+  width:30rpx;
+  height: 30rpx;
+}
+.view_a_text{
+  width: 380rpx;
+  height: 260rpx;
+  /* background: gray; */
+  border-right: 1rpx solid gainsboro;
+}
+.view_a_num{
+  font-size: 22rpx;
+  margin-left: 10rpx;
+}
+.view_a_title{
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.view_a_vant{
+  display: inline-block;
+}
+.view_a_casts{
+  margin-top:5rpx;
+  font-size:22rpx;
+  line-height: 35rpx;
+  /* color:gray; */
+
+}
+/* 最右边样式 */
+.view_a_last{
+  display: flex;
+  flex-direction: column ;
+  justify-content: center;
+  width: 80rpx;
+  height: 260rpx;
+  text-align: center;
+  color: orange;
+  font-size: 26rpx;
+}
+  .view_a_input{
+    width: 600rpx;
+    height: 40rpx;
+    padding: 15rpx 50rpx;
+    background: rgb(230, 226, 226);
+    margin-top: 25rpx;
+    border-radius: 10rpx;
+    font-size: 24rpx;
+    color:gray;
+    line-height: 40rpx;
+  }
+  .load_more{
+  text-align: center;
+  padding:10rpx 0;
+  background: gainsboro;
+  font-size: 24rpx;
+}

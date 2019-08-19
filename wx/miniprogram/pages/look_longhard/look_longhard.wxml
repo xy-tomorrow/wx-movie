@@ -1,0 +1,13 @@
+<!--pages/look_longhard/look_longhard.wxml-
+<!-- 更多电影的列表 -->
+<view class="view_movie_first">
+    <view class="view_movie_item"  wx:for="{{list}}" wx:key="index" bindtap="view_details" data-id="{{item.id}}" data-name="{{item.title}}">
+      <image src="{{item.images.small}}" class="view_movie_img"></image>
+      <view>{{item.title}}</view>
+      <van-rate value="{{ item.rating.average/2 }}" size="{{ 11 }}" allow-half color="#f44" readonly void-color="#eee" void-icon="star" bind:change="onChange" class="view_movie_ping" wx:if="{{item.rating.average>0}}"/>
+      <text wx:if="{{item.rating.average>0}}">{{item.rating.average}}</text>
+      <text wx:else>暂未上映</text>
+    </view>
+    <view wx:if="{{load_more}}" class="load_more"><van-loading  color="#5bf656"/></view>
+    <view wx:if="{{load_more_first}}" class="load_more">已经加载全部....</view>
+</view>

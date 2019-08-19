@@ -1,0 +1,10 @@
+<!--pages/music/music.wxml-->
+
+<view class="view_music">
+  <image class="view_music_img" src="{{music.image}}"></image>
+</view>
+<view class="view_music_title">
+<view class="view_music_title_one">{{music.title}}</view>
+<view wx:for="{{music.author}}" wx:key="index" class="view_music_peo">{{item.name}}</view>
+<text class="view_book_sub_last" wx:for="{{music.tags}}" wx:key="index">{{item.name}} /</text>
+</view>

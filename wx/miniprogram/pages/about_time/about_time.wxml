@@ -1,0 +1,105 @@
+<!--miniprogram/pages/about_time/about_time.wxml-->
+<!-- 控制页面显示隐藏 -->
+<view wx:if="{{htmlshow}}">
+
+<view class="view_a" wx:if="{{onlyif}}">
+  <view class="view_a_header" style="background-image: url('{{list[0].images.small}}')">
+    <view>{{name}}</view>
+  </view>
+
+
+
+  <view wx:for="{{list}}" wx:key="index" class="view_a_white">
+    <view class="view_a_first">
+      <view class="view_a_no">No.{{index+1}}</view>
+      <view class="view_a_order">
+        <!-- 左边的两个图片 -->
+        <view class="view_a_img" bindtap="on_about_time" data-id="{{item.id}}" data-name="{{item.title}}">
+          <image src="{{item.images.small}}"></image>
+          <view>
+            <image src="/images/xinlixue.png"></image>
+          </view>
+        </view>
+        <!-- 中间的评分，导演人员 -->
+        <view class="view_a_text" bindtap="on_about_time" data-id="{{item.id}}" data-name="{{item.title}}">
+          <view class="view_a_title">{{item.title}}</view>
+          <van-rate value="{{item.rating.average/2}}" bind:change="onChange" size="{{ 8 }}" class="view_a_vant" />
+          <text class="view_a_num">{{item.rating.average}}</text>
+          <view class="view_a_casts">
+            <text>{{item.pubdates}}/</text>
+            <text wx:for="{{item.genres}}" wx:key="index"> {{item}} </text>
+            <text wx:for="{{item.directors}}" wx:key="index"> / {{item.name}} </text>
+            <text wx:for="{{item.casts}}" wx:key="index"> {{item.name}} </text>
+          </view>
+        </view>
+        <!-- 看过的那个小星星 -->
+        <view class="view_a_last">
+          <van-rate value="{{ value }}" icon="like" count="{{ 1 }}" void-icon="like-o" bind:change="onChange" data-l_id="{{item.id}}"/>
+          <text wx:if="{{looked!==item.id}}">看过</text>
+          <text wx:if="{{looked==item.id}}">已观看</text>
+        </view>
+      </view>
+      <!-- 下面输入框 -->
+      <view class="view_a_input">
+        希望让人自由。
+      </view>
+
+    </view>
+  </view>
+  <view wx:if="{{load_more}}" class="load_more"><van-loading  color="#5bf656"/></view>
+    <view wx:if="{{load_more_first}}" class="load_more">已经加载全部....</view>
+</view>
+</view>
+
+
+<view wx:if="{{htmlshow}}">
+<!-- 由于口碑榜文件路径不一样，需要用控制显示隐藏来显示 -->
+<view class="view_a" wx:if="{{!onlyif}}">
+  <view class="view_a_header" style="background-image: url('{{list[0].subject.images.small}}')">
+    <view>{{name}}</view>
+  </view>
+
+
+
+  <view wx:for="{{list}}" wx:key="index" class="view_a_white">
+    <view class="view_a_first">
+      <view class="view_a_no">No.{{index+1}}</view>
+      <view class="view_a_order">
+        <!-- 左边的两个图片 -->
+        <view class="view_a_img" bindtap="on_about_time" data-id="{{item.subject.id}}" data-name="{{item.subject.title}}">
+          <image src="{{item.subject.images.small}}"></image>
+          <view>
+            <image src="/images/xinlixue.png"></image>
+          </view>
+        </view>
+        <!-- 中间的评分，导演人员 -->
+        <view class="view_a_text" bindtap="on_about_time" data-id="{{item.subject.id}}" data-name="{{item.subject.title}}">
+          <view class="view_a_title">{{item.subject.title}}</view>
+          <van-rate value="{{item.subject.rating.average/2}}" bind:change="onChange" size="{{ 8 }}" class="view_a_vant" />
+          <text class="view_a_num">{{item.subject.rating.average}}</text>
+          <view class="view_a_casts">
+            <text>{{item.subject.pubdates}}/</text>
+            <text wx:for="{{item.subject.genres}}" wx:key="index"> {{item}} </text>
+            <text wx:for="{{item.subject.directors}}" wx:key="index"> / {{item.name}} </text>
+            <text wx:for="{{item.subject.casts}}" wx:key="index"> {{item.name}} </text>
+          </view>
+        </view>
+        <!-- 看过的那个小星星 -->
+        <view class="view_a_last">
+          <van-rate value="{{ value }}" icon="like" count="{{ 1 }}" void-icon="like-o" bind:change="onChange" />
+          <text wx:if="{{looked!==item.subject.id}}">看过</text>
+          <text wx:if="{{looked==item.subject.id}}">已观看</text>
+        </view>
+      </view>
+      <!-- 下面输入框 -->
+      <view class="view_a_input">
+        希望让人自由。
+      </view>
+
+    </view>
+  </view>
+</view>
+
+
+
+</view>

@@ -1,0 +1,43 @@
+<view class="view_a_older">
+ <view class="{{num==1 ? 'book' : ''}}" bindtap="onbook">小说</view>
+ <view class="{{num==2 ? 'book' : ''}}" bindtap="onmusic">音乐</view>
+</view>
+<van-search value="{{ value }}" placeholder="请输入搜索关键词" focus bind:search="onSearch" />
+
+<!-- 小说部分 -->
+<view class="view_back" hidden="{{num==2}}">
+  <view class="view_header">
+    <view wx:for="{{list}}" wx:key="index" class="view_book" bindtap="bookchange" data-id="{{item._id}}" data-name="{{item.title}}">
+      <view>
+        <image src= "http://statics.zhuishushenqi.com{{item.cover}}" class="view_book_img"></image>
+      </view>
+      <view class="view_book_right">
+        <view class="view_book_title">{{item.title}}</view>
+        <view class="view_book_author">{{item.cat}} | {{item.author}}</view>
+        <view class="view_book_sub">{{item.shortIntro}}</view>
+      </view>
+      <view>
+        <van-icon name="arrow" />
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 音乐部分 -->
+<view class="view_back" hidden="{{num==1}}">
+  <view class="view_header">
+    <view wx:for="{{music}}" wx:key="index" class="view_book" bindtap="musicchange" data-id="{{item.id}}"  data-name="{{item.title}}">
+      <view>
+        <image src= "{{item.image}}" class="view_book_img_tag"></image>
+      </view>
+      <view class="view_book_right_last">
+        <view class="view_book_title">{{item.title}}</view>
+        <view class="view_book_author"  wx:for="{{item.author}}" wx:key="index">{{item.name}}</view>
+        <text class="view_book_sub_last" wx:for="{{item.tags}}" wx:key="index">{{item.name}} /</text>
+      </view>
+      <view>
+        <van-icon name="arrow" />
+      </view>
+    </view>
+  </view>
+</view>

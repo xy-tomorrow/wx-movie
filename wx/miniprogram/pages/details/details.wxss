@@ -1,0 +1,359 @@
+/* pages/details/details.wxss */
+
+[v-cloak] {
+  display: none;
+}
+
+/* 最外层view设置背景色用 */
+
+.view_header {
+  background: #c4d6ec;
+}
+
+/* 外层的 */
+
+.view_details {
+  width: 700rpx;
+  height: 240rpx;
+  margin: 25rpx auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 左侧图片 */
+
+.view_details_img {
+  width: 180rpx;
+  height: 240rpx;
+  border-radius: 10rpx;
+}
+
+/* 右侧的内容 */
+
+.view_details_title {
+  width: 470rpx;
+  height: 240rpx;
+}
+
+/*标题 */
+
+.view_details_titles {
+  font-size: 42rpx;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* 小标题 */
+
+.view_small_title {
+  font-size: 22rpx;
+  color: #7f7f7f;
+  margin: 20rpx 0;
+}
+
+/* 按钮 */
+
+.view_button {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50rpx;
+}
+
+.view_button>view {
+  width: 220rpx;
+  background: white;
+  text-align: center;
+  height: 66rpx;
+  /* line-height: 66rpx; */
+  font-size: 26rpx;
+  border-radius: 8rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.view_button>view>image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+  /* vertical-align: middle; */
+}
+
+/* 评分 */
+
+.view_score {
+  width: 700rpx;
+  height: 230rpx;
+  background: white;
+  margin: 0 auto;
+  border-radius: 8rpx;
+}
+
+/* 评分标题 */
+
+.view_score_title {
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 15rpx 20rpx;
+  color: grey;
+}
+
+.view_score_header {
+  display: flex;
+  justify-content: center;
+}
+
+/* 评分小星星 */
+
+.view_score_num {
+  width: 160rpx;
+  height: 120rpx;
+  /* background: red; */
+  text-align: center;
+}
+
+.van-rate {
+  text-align: right;
+  height: 22rpx;
+}
+
+/* 循环出来的小星星和进度条 */
+
+.view_details_rate {
+  width: 450rpx;
+  height: 130rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 小星星 */
+
+.van_rate {
+  text-align: right;
+  width: 160rpx;
+  /* background: blue; */
+}
+
+/* 右边的位置的进度条的宽高 */
+
+.view_detail_right {
+  width: 300rpx;
+  /* background: pink; */
+  margin-top: 18rpx;
+  margin-left: 10rpx;
+  font-size:16rpx;
+}
+
+.view_right_long {
+  width: 300rpx;
+  height: 22rpx;
+}
+/* 简介的样式 */
+.view_introduction{
+  width: 700rpx;
+  margin: 0 auto;
+  margin-top:25rpx; 
+}
+.view_title_first{
+  font-size:36rpx;
+  font-weight: bold;
+}
+/* 简介显示隐藏公共样式 */
+.view_title_last{
+  margin-top: 25rpx;
+  width: 700rpx;
+  line-height:45rpx;
+  font-size: 28rpx;
+}
+/* 简介隐藏时的样式 */
+.view_last{
+  height: 170rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+/* 展开收起的样式 */
+.view_unfold{
+  font-size: 26rpx;
+  margin:10rpx 0;
+  color: gray;
+  text-align: right;
+}
+
+/* 影人,横向滚动 */
+.view_movie_first{
+  width:100%;
+  margin: 20rpx auto;
+  font-size: 24rpx;
+}
+.view_movie_img{
+  width: 180rpx;
+  height: 240rpx;
+  border-radius:10rpx; 
+}
+.view_movie_faster{
+  white-space: nowrap;
+}
+.view_movie_item{
+  width: 180rpx;
+  height: 310rpx;
+  display: inline-block;
+  text-align: center;
+  margin-left:25rpx;
+}
+.view_movie_item>view{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 24rpx;
+}
+.view_movie_item:last-child{
+  margin-right: 25rpx;
+}
+.view_movie_item>text{
+  color:gray;
+  font-size: 20rpx;
+}
+/* 预告/剧照 */
+.view_trailer{
+  width: 700rpx;
+  margin: 0 auto;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+/* 左边标题 */
+.view_trailer_first{
+  font-size:30rpx;
+  font-weight: bold;
+}
+.view_trailer_last{
+  /* width: 640px; */
+  font-size:24rpx;
+  /* margin-right:40rpx;  */
+  font-weight: bold;
+  color:gray;
+}
+/* 预告滑动部分图片 */
+.view_trailer_img{
+  height: 310rpx;
+  display: inline-block;
+  margin: 20rpx 0 20rpx 20rpx;
+}
+.view_trailer_img>image{
+  height:310rpx;
+}
+/*短评部分 */
+.view_trailer_one{
+  width: 700rpx;
+  margin: 40rpx auto;
+  background: white;
+  border-radius:8rpx; 
+  padding:1rpx 0;
+  box-sizing: border-box;
+}
+.view_one{
+  width: 640rpx;
+  margin:30rpx auto;
+  align-items: center;
+}
+/* 平路的头像部分 */
+.view_pop{
+  width: 640rpx;
+  margin: 20rpx auto;
+  border-bottom: 1px solid #e0dede;
+  }
+  .view_pop_order{
+    display: flex;
+  justify-content: left;
+  }
+.view_pop_img{
+  width:70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.view_pop_text{
+  font-size: 22rpx;
+  color: gray;
+}
+.view_pop_vant{
+ display: inline-block; 
+}
+.view_pop_title{
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.view_pop_subtitle{
+  font-size: 26rpx;
+  margin: 20rpx 0;
+  line-height: 50rpx;
+}
+/* 点赞图标 */
+.view_pop_love{
+  display: flex;
+  justify-content: left;
+  margin: 20rpx 0;
+  line-height: 40rpx;
+}
+.view_pop_love>image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right:20rpx; 
+}
+/* 查看全部点评 */
+.view_pop_list{
+  display: flex;
+  justify-content: space-between;
+  margin: 40rpx auto;
+  width: 640rpx;
+  align-items: center;
+}
+/* 最后面的影评 */
+.view_last_lod{
+  background: white;
+  margin-bottom: 15rpx;
+  }
+.view_lod{
+  width: 700rpx;
+  padding: 25rpx 0;
+  margin: 0 auto;
+  }
+  .view_lod_img{
+    width: 40rpx;
+    height: 40rpx;
+    vertical-align: middle;
+    border-radius: 50%;
+    margin-right: 20rpx;
+  }
+  /* 内容部分 */
+.view_lod_title{
+  font-size: 28rpx;
+  font-weight: bold;
+  margin: 20rpx 0;
+}
+.view_lod_small{
+  color: rgb(146, 142, 142);
+  font-size: 26rpx;
+  line-height: 40rpx;
+  height: 170rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  margin: 20rpx 0;
+}
+/* 回复量 */
+.view_hode{
+  font-size: 22rpx;
+  color: #ccc2c2;
+  padding-bottom: 30rpx; 
+}

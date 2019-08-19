@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/look_longhard/look_longhard",
+    "pages/details/details",
+    "pages/me/me",
+    "pages/about/about",
+    "pages/search/search",
+    "pages/search_book/search_book",
+    "pages/about_time/about_time",
+    "pages/music/music",
+    "pages/comments/comments"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#54ec54",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/dianyingyuan.png",
+        "selectedIconPath": "images/dianyingyuan_active.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "榜单",
+        "iconPath": "images/bangdan.png",
+        "selectedIconPath": "images/bangdan_active.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/me_active.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+<van-search value="{{ value }}" placeholder="请输入搜索关键词" bindtap="on_focus"  disabled/>
+<view wx:if="{{on_if}}">
+  <!-- 影院热映 -->
+  <view class="view_movie">
+    <view>影院热映</view>
+    <view class="view_movie_time" bindtap="look_longhard" data-id="1" data-name="影院热映">查看更多 ></view>
+  </view>
+  <view class="view_movie_first">
+    <scroll-view scroll-x class="view_movie_faster">
+      <view class="view_movie_item" wx:for="{{list}}" wx:key="index" bindtap="view_details" data-id="{{item.id}}" data-name="{{item.title}}">
+        <image src="{{item.images.small}}" class="view_movie_img"></image>
+        <view>{{item.title}}</view>
+        <van-rate value="{{ item.rating.average/2 }}" size="{{ 11 }}" allow-half color="#f44" readonly void-color="#eee" void-icon="star" bind:change="onChange" class="view_movie_ping" wx:if="{{item.rating.average>0}}" />
+        <text wx:if="{{item.rating.average>0}}">{{item.rating.average}}</text>
+        <text wx:else>暂未上映</text>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- top榜 -->
+  <view class="view_movie">
+    <view>top榜</view>
+    <view class="view_movie_time" bindtap="look_longhard" data-id="2" data-name="top榜">查看更多 ></view>
+  </view>
+  <view class="view_movie_first">
+    <scroll-view scroll-x class="view_movie_faster">
+      <view class="view_movie_item" wx:for="{{top}}" wx:key="index" bindtap="view_details" data-id="{{item.id}}" data-name="{{item.title}}">
+        <image src="{{item.images.small}}" class="view_movie_img"></image>
+        <view>{{item.title}}</view>
+        <van-rate value="{{ item.rating.average/2 }}" size="{{ 11 }}" allow-half color="#f44" readonly void-color="#eee" void-icon="star" bind:change="onChange" class="view_movie_ping" wx:if="{{item.rating.average>0}}" />
+        <text wx:if="{{item.rating.average>0}}">{{item.rating.average}}</text>
+        <text wx:else>暂未上映</text>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 即将上映 -->
+  <view class="view_movie">
+    <view>即将上映</view>
+    <view class="view_movie_time" bindtap="look_longhard" data-id="3" data-name="即将上映">查看更多 ></view>
+  </view>
+  <view class="view_movie_first">
+    <scroll-view scroll-x class="view_movie_faster">
+      <view class="view_movie_item" wx:for="{{last}}" wx:key="index" bindtap="view_details" data-id="{{item.id}}" data-name="{{item.title}}">
+        <image src="{{item.images.small}}" class="view_movie_img"></image>
+        <view>{{item.title}}</view>
+        <van-rate value="{{ item.rating.average/2 }}" size="{{ 11 }}" allow-half color="#f44" readonly void-color="#eee" void-icon="star" bind:change="onChange" class="view_movie_ping" wx:if="{{item.rating.average>0}}" />
+        <text wx:if="{{item.rating.average>0}}">{{item.rating.average}}</text>
+        <text wx:else>即将上映</text>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 新片榜 -->
+  <view class="view_movie">
+    <view>新片榜</view>
+    <view class="view_movie_time" bindtap="look_longhard" data-id="4" data-name="新片榜">查看更多 ></view>
+  </view>
+  <view class="view_movie_first">
+    <scroll-view scroll-x class="view_movie_faster">
+      <view class="view_movie_item" wx:for="{{newmovie}}" wx:key="index" bindtap="view_details" data-id="{{item.id}}" >
+        <image src="{{item.images.small}}" class="view_movie_img"></image>
+        <view>{{item.title}}</view>
+        <van-rate value="{{ item.rating.average/2 }}" size="{{ 11 }}" allow-half color="#f44" readonly void-color="#eee" void-icon="star" bind:change="onChange" class="view_movie_ping" wx:if="{{item.rating.average>0}}" />
+        <text wx:if="{{item.rating.average>0}}">{{item.rating.average}}</text>
+        <text wx:else>即将上映</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>

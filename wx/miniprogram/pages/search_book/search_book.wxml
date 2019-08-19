@@ -1,0 +1,34 @@
+<view>
+ <view class='de_tabset'>
+   <image src= "http://statics.zhuishushenqi.com{{detail.cover}}" class='de_img'></image>
+   <view class='de_zui'>
+    <view class='de_tab'>{{detail.title}}</view>
+    <view>作者：{{detail.author}}</view>
+    <view>字数：{{detail.wordCount}}</view>
+    <view>收藏人数：{{detail.latelyFollower}}</view>
+    <view>最后更新：{{detail.datareset}}</view>
+   </view>
+ </view> 
+ <view class='de_kai'>
+   <text class='lg_shi' bindtap='jumpup'>开始阅读</text> 
+   <text>加入书架</text> 
+ </view>
+ <view class='lg_licg'>
+   <view class='lg_dai'>{{detail.longIntro}}
+   </view>
+   <view class='ls_hou'>最后更新：<text class='ls_tang'>{{detail.lastChapter}}</text></view>
+   <view class='ls_qing'>
+     <text wx:for="{{detail.tags}}" wx:key="index" wx:if="{{index<5}}">{{item}}</text>
+   </view>
+   <view class='xi_xiang'>
+     <view class='xi_guan'>相关推荐</view>
+     <view class='xi_jian'>
+       <view wx:for="{{metast}}" wx:key="index">
+         <image src='http://statics.zhuishushenqi.com{{item.cover}}' class='xi_ima' bindtap='btase' data-id='{{item._id}}' data-title='{{item.title}}'></image>
+         <view class='xi_ji'>{{item.title}}</view>
+       </view>
+     </view>
+   </view>
+ </view>
+  
+</view>

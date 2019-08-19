@@ -1,0 +1,77 @@
+<!-- 电影榜单页面 -->
+<!-- 控制页面是否显示 -->
+<view>
+
+
+<view class="view_about">
+  <!-- 一周口碑榜 -->
+  <view class="view_about_first" style="background-image: url('{{list[0].subject.images.small}}')" data-id="一周口碑电影榜" bindtap="onabout_time">
+    <view class="view_about_text">一周口碑电影榜</view>
+    <view class="view_about_img">
+      <view>
+      <image src="{{item.subject.images.small}}" wx:for="{{list}}" wx:key="index"></image>
+      </view>
+      <view class="view_text">+{{outlist}}</view>
+    </view>
+  </view>
+
+<!-- 新品榜 -->
+    <view class="view_about_first" style="background-image: url('{{newmovie[0].images.small}}')" data-id="新片榜" bindtap="onabout_time">
+    <view class="view_about_text">新片榜</view>
+    <view class="view_about_img">
+      <view>
+      <image src="{{item.images.small}}" wx:for="{{newmovie}}" wx:key="index"></image>
+      </view>
+      <view class="view_text">+{{outlists}}</view>
+    </view>
+  </view>
+<!-- top250 -->
+  <view class="view_about_second" data-id="top250" bindtap="onabout_time">
+  <!-- 左边加背景的文字 -->
+    <view class="view_about_top" style="background-image: url('{{top[0].images.small}}')">
+      <view class="class_view_logo">top 250</view>
+    </view>
+    <!-- 右边的文字 -->
+    <view class="view_about_right">
+      <view wx:for="{{top}}" wx:key="index">{{index+1}} . {{item.title}} <text class="view_about_text_last"> {{item.rating.average}}分</text></view>
+    </view>
+  </view>
+  <!-- 热映榜 -->
+  <view class="view_about_second" data-id="热映榜" bindtap="onabout_time">
+  <!-- 左边加背景的文字 -->
+    <view class="view_about_top" style="background-image: url('{{last[0].images.small}}')">
+      <view class="class_view_logo">热映榜</view>
+    </view>
+    <!-- 右边的文字 -->
+    <view class="view_about_right">
+      <view wx:for="{{last}}" wx:key="index">{{index+1}} . {{item.title}} <text class="view_about_text_last"> {{item.rating.average}}分</text></view>
+    </view>
+  </view>
+   <!--新片榜  -->
+  <view class="view_about_second" data-id="新片榜" bindtap="onabout_time">
+  <!-- 左边加背景的文字 -->
+    <view class="view_about_top" style="background-image: url('{{newmovie[0].images.small}}')">
+      <view class="class_view_logo">新片榜</view>
+    </view>
+    <!-- 右边的文字 -->
+    <view class="view_about_right">
+      <view wx:for="{{newmovie}}" wx:key="index">{{index+1}} . {{item.title}} <text class="view_about_text_last"> {{item.rating.average}}分</text></view>
+    </view>
+  </view>
+   <!--  -->
+  <view class="view_about_second" data-id="一周口碑电影榜" bindtap="onabout_time">
+  <!-- 左边加背景的文字 -->
+    <view class="view_about_top" style="background-image: url('{{list[0].subject.images.small}}')">
+      <view class="class_view_logo">口碑榜</view>
+    </view>
+    <!-- 右边的文字 -->
+    <view class="view_about_right">
+      <view wx:for="{{list}}" wx:key="index">{{index+1}} . {{item.subject.title}} <text class="view_about_text_last"> {{item.subject.rating.average}}分</text></view>
+    </view>
+  </view>
+
+
+</view>
+
+
+</view>
